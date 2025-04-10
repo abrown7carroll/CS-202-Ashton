@@ -1,0 +1,143 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  /* Navbar Styles */
+  .navbar,
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    position: relative;
+  }
+  
+  .navbar img {
+    height: 40px;
+  }
+  
+  .navbar h1 {
+    font-size: 18px;
+  }
+  
+  /* Menu Button */
+  nav button {
+    display: flex;
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  nav button:hover {
+    background-color: #555;
+  }
+  
+  /* Arrow and Rotate */
+  .arrow,
+  span {
+    display: inline-block;
+    padding: 0 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #555;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .dropdown.show {
+    display: block;
+  }
+  
+  .dropdown a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .dropdown a:hover {
+    background: #666;
+  }
+  
+  /* Content Section */
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .box {
+    width: 90%;
+    max-width: 300px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    background-color: black;
+    padding: 10px;
+  }
+  
+  .footer h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 1024px) {
+    nav button {
+      display: none;
+    }
+  
+    .dropdown {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      justify-content: space-evenly;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+  
+    .dropdown a {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+  
+    .dropdown a:hover {
+      background-color: #666;
+    }
+  }
+  

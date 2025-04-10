@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Help</title>
+  <link rel="stylesheet" href="../styles/base.css">
+</head>
+<body>
+  <nav>
+    <!-- https://www.w3schools.com/charsets/ref_utf_geometric.asp -->
+    <button onclick="toggleMenu()">Menu <span>➤</span></button>
+    <div class="dropdown" id="menu">
+      <!-- your home would be index.html, mine isn't because it is an example -->
+      <a href="../index.html">Home</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="recentbuilds.html">Recent Builds</a>
+      <a href="recentvids.html">Recent Vids</a>
+      <a href="buildhelp.html">Build Help<a>
+    </div>
+  </nav>
+  <h1>Build Help</h1>
+</body>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+
+    // Added functionality to rotate the arrow
+    document.querySelector("button .arrow").classList.toggle("rotate");
+  }
+</script>
+</html>
