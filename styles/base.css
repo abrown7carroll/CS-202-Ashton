@@ -104,18 +104,18 @@ body {
   }
   
   /* Footer */
-  .footer {
+  footer {
     text-align: center;
     background-color: black;
     padding: 10px;
   }
   
-  .footer h2 {
+  footer h2 {
     margin: 0;
     font-size: 16px;
   }
   
-  /* Responsive Design */
+
   @media (min-width: 1024px) {
     nav button {
       display: none;
