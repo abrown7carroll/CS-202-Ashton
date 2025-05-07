@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build Help</title>
-  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href=../styles/base.css>
 </head>
 <body>
-  <nav>
+  <div class="navbar">
     <!-- https://www.w3schools.com/charsets/ref_utf_geometric.asp -->
-    <button onclick="toggleMenu()">Menu <span>➤</span></button>
+    <button onclick="toggleMenu()">☰ <span class="arrow">&#9662;</span></button>
     <div class="dropdown" id="menu">
       <!-- your home would be index.html, mine isn't because it is an example -->
       <a href="../index.html">Home</a>
@@ -19,13 +19,49 @@
       <a href="recentvids.html">Recent Vids</a>
       <a href="buildhelp.html">Build Help<a>
     </div>
-  </nav>
+  </div>
   <h1>Build Help</h1>
+<!-- …your existing <div class="gallery">…</div> goes here… -->
+
+<!-- Build Help Section -->
+<section class="build-help">
+  <h2>Build Help</h2>
+  <p>Building a gaming PC can be daunting—here are a few top‐level tips:</p>
+  <ul>
+    <li>Choose a motherboard that fits your case form-factor (ATX/mATX/ITX).</li>
+    <li>Balance your CPU and GPU so neither bottlenecks the other.</li>
+    <li>Invest in quality cooling (air or AIO) if you plan to overclock.</li>
+    <li>Make sure your PSU has enough wattage and the right connectors.</li>
+  </ul>
+</section>
+
+<!-- Tutorials Section -->
+<section class="tutorials">
+  <h2>Step-by-Step Video Guides</h2>
+  <section class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/beW8pCezrdI?si=bZWoiNfL87V0N7TZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/c3dggnkaEs8?si=67ZhX-ac3z0690pl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+</section>
+
+<!-- Forums & Resources Section -->
+<section class="forums">
+  <h2>Forums & Further Reading</h2>
+  <ul>
+    <li><a href="https://www.reddit.com/r/buildapc/" target="_blank">r/buildapc on Reddit</a></li>
+    <li><a href="https://www.tomshardware.com/forum/" target="_blank">Tom’s Hardware Forums</a></li>
+    <li><a href="https://linustechtips.com/main/" target="_blank">Linus Tech Tips Forum</a></li>
+    <li><a href="https://pcpartpicker.com/" target="_blank">PCPartPicker (Compatibility Checker)</a></li>
+  </ul>
+</section>
+
+
   <footer>
     <h2>Privacy Policy</h2>
   </footer>
 </body>
 <script>
+
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
 

@@ -1,143 +1,278 @@
-/* General Body Styling */
+/* reset default browser spacing and set up basic font & colors */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: white;
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-  
-  /* Navbar Styles */
-  .navbar,
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    padding: 10px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    position: relative;
-  }
-  
-  .navbar img {
-    height: 40px;
-  }
-  
-  .navbar h1 {
-    font-size: 18px;
-  }
-  
-  /* Menu Button */
-  nav button {
-    display: flex;
-    background-color: #444;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-  }
-  
-  nav button:hover {
-    background-color: #555;
-  }
-  
-  /* Arrow and Rotate */
-  .arrow,
-  span {
-    display: inline-block;
-    padding: 0 5px;
-    transition: transform 0.3s ease;
-  }
-  
-  .rotate {
-    transform: rotate(90deg);
-    transition: transform 0.5s ease;
-  }
-  
-  /* Dropdown Menu */
-  .dropdown {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: #555;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .dropdown.show {
-    display: block;
-  }
-  
-  .dropdown a {
-    color: #fff;
-    padding: 10px;
-    display: block;
-    text-decoration: none;
-  }
-  
-  .dropdown a:hover {
-    background: #666;
-  }
-  
-  /* Content Section */
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .box {
-    width: 90%;
-    max-width: 300px;
-    height: 150px;
-    background-color: #333;
-    border-radius: 8px;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    background-color: black;
-    padding: 10px;
-  }
-  
-  footer h2 {
-    margin: 0;
-    font-size: 16px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  max-width: 1024px;
+  margin: 0 auto; /* center page content */
+}
 
-  @media (min-width: 1024px) {
-    nav button {
-      display: none;
-    }
-  
-    .dropdown {
-      display: flex !important;
-      position: static;
-      flex-direction: row;
-      justify-content: space-evenly;
-      background-color: transparent;
-      border: none;
-      padding: 0;
-    }
-  
-    .dropdown a {
-      display: inline-block;
-      padding: 10px 20px;
-    }
-  
-    .dropdown a:hover {
-      background-color: #666;
-    }
+/* make links use the same cursive font as navbar */
+a {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* navbar container */
+.navbar {
+  display: flex;               /* use flexbox for layout */
+  justify-content: space-between; /* put space between items */
+  align-items: center;         /* vertically center items */
+  background-color: black;
+  padding: 10px;
+  position: relative;          /* so dropdown can be positioned absolutely */
+}
+
+/* logo sizing */
+.navbar img {
+  height: 40px;
+}
+
+/* navbar title size */
+.navbar h1 {
+  font-size: 18px;
+}
+
+/* menu toggle button */
+.navbar button {
+  display: flex;
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin-left: auto;           /* push button to the right */
+}
+
+.navbar button:hover {
+  background-color: #555;      /* darker on hover */
+}
+
+/* arrow icon next to menu button */
+.arrow,
+span {
+  display: inline-block;
+  padding: 0 5px;
+  transition: transform 0.3s ease; /* smooth spin animation */
+}
+
+.rotate {
+  transform: rotate(90deg);    /* rotate when dropdown opens */
+  transition: transform 0.5s ease;
+}
+
+/* dropdown menu (hidden by default) */
+.dropdown {
+  display: none;
+  flex-direction: column;      /* stack links vertically */
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #555;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.dropdown.show {
+  display: block;              /* show when .show class is added */
+}
+
+.dropdown a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #666;            /* highlight link on hover */
+}
+
+/* main content area */
+.content {
+  display: flex;
+  flex-direction: column;      /* stack boxes vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 40px;                   /* space between boxes */
+  min-height: calc(100vh - 100px); /* fill the rest of screen */
+  padding: 20px;
+  background-image: url('../assets/images/background.png');
+  background-size: contain;    /* fit background image inside */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* contact/info boxes */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 90%;
+  max-width: 300px;
+  background-color: rgba(51, 51, 51, 0.9);
+  border-radius: 8px;          /* rounded corners */
+  padding: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.box:hover {
+  background-color: rgba(80, 80, 80, 0.95);
+  cursor: pointer;
+}
+
+.info {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  width: 90%;
+  max-width: 300px;
+  background-color: rgba(51, 51, 51, 0.9);
+  border-radius: 8px;
+  padding: 20px;
+  color: white;
+}
+
+/* footer styling */
+footer {
+  text-align: center;
+  background-color: black;
+  padding: 10px;
+}
+
+footer h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+p {
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+/* on desktop, hide the toggle button and show links inline */
+@media (min-width: 1024px) {
+  .navbar button {
+    display: none !important;   /* no menu button on desktop */
   }
-  
+
+  .dropdown {
+    display: flex !important;   /* show links as a row */
+    position: static;           /* flow with other items */
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .dropdown a {
+    padding: 10px 20px;
+  }
+
+  .dropdown a:hover {
+    background-color: #666;
+  }
+}
+
+/* gallery of recent builds */
+.gallery {
+  display: grid;                
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* responsive columns */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;          /* keep each image square */
+  object-fit: cover;            /* fill square, cropping if needed */
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* single column on very small screens */
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* video embed grid */
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 400px;
+}
+
+/* build help, tutorials, forums sections */
+.build-help,
+.tutorials,
+.forums {
+  max-width: 1024px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(51, 51, 51, 0.9);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.build-help ul {
+  list-style: disc inside;      /* bullet list inside box */
+  margin-top: 10px;
+}
+
+.build-help li {
+  margin-bottom: 5px;
+}
+
+.tutorials .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tutorials iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 6px;           /* rounded video corners */
+}
+
+.forums ul {
+  list-style: none;             /* no bullets */
+  padding: 0;
+  margin-top: 10px;
+}
+
+.forums li {
+  margin-bottom: 8px;
+}
+
+.forums a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.forums a:hover {
+  text-decoration: underline;
+}

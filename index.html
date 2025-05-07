@@ -4,40 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boki Tech</title>
-  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/base.css"> <!-- link to our CSS -->
 </head>
 <body>
-  <!-- navbar -->
+  <!-- top bar -->
   <div class="navbar">
-    <img src="../CS-202-Ashton/assets/images/bokilogo.png" alt="Logo">
-    <h1>Boki Tech</h1>
-    <button onclick="toggleMenu()">☰ <span class="arrow">&#9662;</span></button>
+    <img src="../CS-202-Ashton/assets/images/bokilogo.png" alt="Logo"> <!-- logo image -->
+    <h1>Boki Tech</h1> <!-- name of the site -->
+
+    <!-- button to open/close menu -->
+    <button onclick="toggleMenu()">
+      ☰ <span class="arrow">&#9662;</span>
+    </button>
+
+    <!-- menu links (hidden until you click the button) -->
     <div class="dropdown" id="menu">
       <a href="index.html">Home</a>
       <a href="pages/contactus.html">Contact Us</a>
       <a href="pages/recentbuilds.html">Recent Builds</a>
       <a href="pages/recentvids.html">Recent Vids</a>
-      <a href="pages/buildhelp.html">Build Help<a>
+      <a href="pages/buildhelp.html">Build Help</a>
     </div>
   </div>
 
-  <!-- content section -->
+  <!-- main content boxes -->
   <div class="content">
-    <div class="box"></div>
-    <div class="box"></div>
+    <a href="pages/buildhelp.html" class="box">
+      <h3>Build Help</h3>
+      <p>Need help building your dream PC? Click here.</p>
+    </a>
+    <a href="pages/recentbuilds.html" class="box">
+      <h3>Recent Builds</h3>
+      <p>See the latest PC builds and specs.</p>
+    </a>
   </div>
 
-  <!-- footer -->
+  <!-- bottom info -->
   <footer>
     <h2>About</h2>
+    <p>We’re two brothers who build and sell PCs for fun!</p>
   </footer>
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
 
-    // Added functionality to rotate the arrow
-    document.querySelector("button .arrow").classList.toggle("rotate");
-  }
-</script>
+  <script>
+    function toggleMenu() {
+      // toggle the menu open or closed
+      document.getElementById("menu").classList.toggle("show");
+      // make the little arrow spin
+      document.querySelector("button .arrow").classList.toggle("rotate");
+    }
+  </script>
 </body>
 </html>
